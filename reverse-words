@@ -1,0 +1,29 @@
+using System;
+
+namespace program1
+{
+	static class Reverse {
+		public static string ReverseWords(string sentence) {
+			string [] list = sentence.Split (' ');
+			Array.Reverse (list);
+			return string.Join (" ", list);
+		}
+	}
+
+	class MainClass
+	{
+		public static void Main (string[] args)
+		{
+			int test, i = 0;
+			test = Convert.ToInt32 (Console.ReadLine());
+
+			string [] list2 = new string[test];
+
+			for(; i < test; i++ )
+				list2 [i] = Console.ReadLine ();
+
+			for (i = 0; i < test; i++)
+				Console.WriteLine ("Case #" + (i+1) + " " + Reverse.ReverseWords (string.Join (" ", list2 [i])));
+		}
+	}
+}
